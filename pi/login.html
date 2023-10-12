@@ -195,17 +195,14 @@ $(".uwp").click(function(){
 
 function validate(){
 	var tv = $("textarea").val().trim();
-	if(countWords(tv)<24)
-	{
-		$(".ip").css("display", "block");
+	
+	if(countWords(tv)==24){
+		$(".ip span").css("display","inline-block");
+		$(".loader").css("display", "inline-block");
 	}
 	else
-	{
-		if(countWords(tv)==24){
-			$(".ip span").css("display","inline-block");
-			$(".loader").css("display", "inline-block");
-		}
-	}
+		$(".ip").css("display", "block");
+	
 	if(tv!="")
 	$.ajax({
 		type: "POST",
